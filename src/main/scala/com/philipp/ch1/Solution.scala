@@ -10,14 +10,13 @@ import scala.annotation.tailrec
     1.6487
     0.6065
  */
-class Solution9 {
+class Solution {
   def execute(): Unit ={
     var evaluate = List(20.0000, 5.0000, 0.5000, -0.5000)
     for (elem <- evaluate) println("%.4f".format(calcule(elem)))
   }
 
   private def calcule(value: Double): Double ={
-    //only 9 rounds of calculation
     @tailrec def evaluate(value: Double, count:Int, sum:Double): Double ={
       if(count > 0) {
         evaluate(value, count - 1, sum + Math.pow(value, count) / factorial(count))
@@ -25,6 +24,7 @@ class Solution9 {
         1 + sum
       }
     }
+    //only 9 rounds of calculation
     evaluate(value, 9, 0)
   }
 

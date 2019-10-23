@@ -19,9 +19,10 @@ object Main {
     println(factorial(5))
     println(factorial(20))
 
-    var sol = new Solution9()
-    sol.execute()
+    new Solution().execute()
   }
 
   def factorial(x: BigInt): BigInt = if (x == 0) 1 else x * factorial(x - 1)
+
+  def max(x:Int, y:Int): Int = if(x > y) x else y
 }
