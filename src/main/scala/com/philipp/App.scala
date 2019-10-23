@@ -1,7 +1,9 @@
 package com.philipp
 
+import com.philipp.ch3.Solution
+
 object App {
   def main(args: Array[String]): Unit = {
-    println("The env setup correctly! I'm run scala inside IDEA")
+    new Solution().exec
   }
 }
