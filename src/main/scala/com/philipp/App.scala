@@ -1,6 +1,6 @@
 package com.philipp
 
-import com.philipp.ch10.Solution
+import com.philipp.ch12.Solution
 
 object App {
   def main(args: Array[String]): Unit = {

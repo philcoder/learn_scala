@@ -1,8 +1,5 @@
 package com.philipp.hackerrank
 
-import scala.collection.mutable.ArrayBuffer
-import scala.io.StdIn
-
 object MissingNumber {
   def main(args: Array[String]): Unit = {
     val input = io.Source.stdin.getLines().toList
