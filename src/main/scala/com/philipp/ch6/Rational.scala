@@ -37,5 +37,18 @@ class Rational(numerator: Int, denominator: Int) {
   //private function
   //private def gcdCalcule(a: Int, b: Int): Int = if (b == 0) a else gcdCalcule(b, a % b)
 
+  override def equals(other: Any): Boolean =
+    other match {
+      case that: Rational =>
+        (that canEqual this) &&
+          num == that.num &&
+          denom == that.denom
+      case _ => false
+    }
+
+  private def canEqual(other: Any): Boolean = other.isInstanceOf[Rational]
+
+  override def hashCode: Int = (num, denom).##
+
   override def toString = s"Rational = $numerator/$denominator, gcd: $gcd"
 }
