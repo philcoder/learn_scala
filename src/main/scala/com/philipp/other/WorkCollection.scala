@@ -1,6 +1,10 @@
 package com.philipp.other
 
-object WorkList {
+import scala.collection.immutable.TreeSet
+import scala.collection.mutable
+import scala.collection.mutable.ListBuffer
+
+object WorkCollection {
   def main(args: Array[String]): Unit = {
     example1()
   }
@@ -52,6 +56,31 @@ object WorkList {
     println(words.map(_.length))
     println(words.map(_.toList.reverse.mkString))
 
+    mutableList()
+    studySet()
+  }
+
+  private def studySet()={
+    var nums = Set(1,2,3)
+    nums = nums + 6
+    println(nums) //set
+    nums += 7
+    println(nums) //above 5 elems transf on hashset
+
+    //transf immutable set to mutable
+    val elems = TreeSet[Int](1,2,3,4)
+    val multable = mutable.Set.empty ++= elems
+    println(multable)
+    //the same logic for mutable to immutable
+  }
+
+  private def mutableList()={
+    val mutableList = new ListBuffer[Int]()
+    mutableList += 1
+    mutableList += 2
+    //wtf this add on list front
+    3 +=: mutableList
+    println(mutableList)
   }
 
   //that function pattern works like on erlang
